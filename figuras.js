@@ -103,15 +103,15 @@ function calcularAreaCuadrado() {
 
 //Triángulo
 function calcularPerimetroTriangulo() {
-    var inputLado1 = document.getElementById("inputLado1Triangulo");
-    var inputLado2 = document.getElementById("inputLado2Triangulo");
+    var inputLadoA = document.getElementById("inputLadoATriangulo");
+    var inputLadoB = document.getElementById("inputLadoBTriangulo");
     var inputBase = document.getElementById("inputBaseTriangulo");
 
-    var lado1 = parseInt(inputLado1.value);
-    var lado2 = parseInt(inputLado2.value);
+    var ladoA = parseInt(inputLadoA.value);
+    var ladoB = parseInt(inputLadoB.value);
     var base = parseInt(inputBase.value);
 
-    var perimetro = lado1 + lado2 + base;
+    var perimetro = ladoA + ladoB + base;
     alert(perimetro);
 }
 
@@ -154,4 +154,32 @@ function calcularAreaCirculo() {
     var area = (radio * radio) * Math.PI;
 
     alert(area);
+}
+
+//Triangulo Isosceles
+
+function calcularAlturaTrianguloIso() {
+    var inputLadoA = document.getElementById("inputLadoATrianguloIso");
+    var inputLadoB = document.getElementById("inputLadoBTrianguloIso");
+    var inputBase = document.getElementById("inputBaseTrianguloIso");
+
+    var trianguloGrandeLadoA = parseInt(inputLadoA.value);
+    var trianguloGrandeLadoB = parseInt(inputLadoB.value);
+    var trianguloGrandeLadoBase = parseInt(inputBase.value);
+
+    if (trianguloGrandeLadoA != trianguloGrandeLadoB) {
+        console.error("Los lados A y N no son iguales");
+    }   else {
+        var trianguloChicoLadoA;
+        var trianguloChicoLadoB = trianguloGrandeLadoBase / 2;
+        var trianguloChicoLadoBase = trianguloGrandeLadoA;
+
+        var trianguloChicoLadoBCuadrado = trianguloChicoLadoB * trianguloChicoLadoB;
+        var trianguloChicoLadoBaseCuadrado = trianguloChicoLadoBase * trianguloChicoLadoBase;
+
+        var trianguloChicoLadoA = Math.sqrt(trianguloChicoLadoBaseCuadrado - trianguloChicoLadoBCuadrado);
+
+        var trianguloGrandeAltura = trianguloChicoLadoA;
+        alert(trianguloGrandeAltura);
+    }
 }
