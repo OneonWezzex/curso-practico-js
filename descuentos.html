@@ -18,14 +18,30 @@
         <h2>Calcula el precio a pagar de tus productos con descuento</h2>
 
         <form action="">
-            <label for="inputPrice">Escribe el precio de tu procuto:</label>
+            <label for="inputPrice"><h3>Escribe el precio de tu procuto:</h3></label>
             <input type="number" id="inputPrice" placeholder="Precio">
-
-            <label for="inputDiscount">Escribe el descuento de tu procuto:</label>
+            <br><br>
+            <label for="inputDiscount">Escribe el descuento de tu producto:</label>
             <input type="number" id="inputDiscount" placeholder="Descuento">
-
+            <br>
             <button type="button" onclick="onClickButtonPriceDiscount()">Calcular el precio del descuento</button>
-
+            <br><br>
+            <!--Calcular descuento con cupones escritos-->
+            <label for="inputCouponText1">Escribe el cupón de descuento</label>
+            <input type="text" id="inputCouponText1" placeholder="Escribe tu cupón">
+            <br>
+            <button type="button" onclick="onClickButtonPriceDiscountText1()">Calcular el precio del descuento</button>
+            <br><br>
+            <!--Calcular descuento con cupones con selector html-->
+            <label for="inputCouponOption">Selecciona el cupón</label>
+            <select name="inputCouponOption" id="inputCouponOption">
+                <option value="Cupon1">Cupón 1</option>
+                <option value="Cupon2">Cupón 2</option>
+                <option value="Cupon3">Cupón 3</option>
+            </select>
+            <br>
+            <button type="button" onclick="onClickButtonPriceDiscountOption()">Calcular el precio con cupón</button>
+            <br>
             <p id="ResultP"></p>
         </form>
     </section>
